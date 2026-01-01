@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ديوان بندر بن سرور</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --dark-bg: #121212; 
+            --card-bg: #1a1a1a;
+            --text-main: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* هيدر الموقع */
+        header {
+            width: 100%;
+            padding: 40px 0 30px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a1a, var(--dark-bg));
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .header-name {
+            font-family: 'GE_SS_Two_Medium 2.otf', sans-serif; /* الخط المطلوب */
+            font-size: 2.2em; 
+            color: var(--primary-gold);
+            margin: 0;
+        }
+
+        /* صندوق البحث */
+        .search-area {
+            width: 90%;
+            max-width: 500px;
+            margin: -20px auto 30px;
+            position: relative;
+            z-index: 100;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid var(--primary-gold);
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Amiri', serif;
+            font-size: 0.95rem; 
+            outline: none;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* حاوية المحتوى */
+        .main-container {
+            width: 90%;
+            max-width: 800px;
+            padding: 10px;
+            margin-bottom: 60px;
+        }
+
+        .section-h {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 1.6em;
+            color: var(--primary-gold);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-h::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(197, 160, 89, 0.2);
+            margin-right: 15px;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #ccc;
+        }
+
+        /* بيت الشعر */
+        .verse-focus {
+            font-family: 'Aref Ruqaa', serif;
+            text-align: center;
+            padding: 25px 15px;
+            margin: 30px 0;
+            background: rgba(197, 160, 89, 0.03);
+            border-left: 2px solid var(--primary-gold);
+            border-right: 2px solid var(--primary-gold);
+            font-size: 1.4em;
+            color: var(--primary-gold);
+        }
+
+        /* روابط التنقل */
+        .nav-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .nav-btn {
+            font-family: 'GE_SS_Two_Medium 2.otf', sans-serif; /* الخط المطلوب */
+            padding: 10px 25px;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 1em;
+            transition: 0.4s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        @media (max-width: 480px) {
+            .header-name { font-size: 1.8em; }
+            .section-h { font-size: 1.4em; }
+            .content-text { font-size: 1.05em; }
+            .verse-focus { font-size: 1.25em; }
+            .nav-btn { font-size: 0.9em; padding: 8px 20px; }
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-name">بندر بن سرور</div>
+</header>
+
+<div class="search-area">
+    <input type="text" id="searchInput" placeholder="ابحث في الديوان..." onkeyup="siteSearch()">
+</div>
+
+<div class="main-container" id="content">
+    <div class="searchable-section">
+        <span class="section-h">من هو بندر؟</span>
+        <div class="content-text">
+            بندر بن سرور بن خضير القسامي العطاوي الروقي العتيبي. ولد في "القرارة" بنجد عام 1360هـ، ونشأ في حياة بدوية صعبة علّمته الصبر وجزالة الرد. بندر ما كان مجرد شاعر، كان رجلٍ يقدّس الكرامة ويرفض الهوان، ومبدأه في الحياة والرزق اختصره يوم قال:
+        </div>
+    </div>
+
+    <div class="verse-focus">
+        رزقي على اللي ميّت القشع يحييه
+    </div>
+
+    <div class="searchable-section">
+        <span class="section-h">حياته وشخصيته</span>
+        <div class="content-text">
+            اتسم بندر بن سرور بشخصية قوية، عصية على الانكسار، عزيز النفس، شديد الحساسية تجاه الكرامة والصدق. كان صريحًا لا يعرف المجاملة، يأنف من التزلف، ويحتقر الزيف، وهي صفات انعكست بوضوح في شعره ولغته.
+            <br><br>
+            جمع في شخصيته بين الحدة والحنان؛ حادًّا في موقفه من النفاق والظلم، ورقيقًا في نظرته للحياة والإنسان. عاش صراعًا داخليًا بين واقعه القاسي وطموحه الروحي، فظهر ذلك في شعره تأملًا وحكمةً وعتبًا على الزمن.
+            <br><br>
+            لم يكن شاعر مناسبات، بل شاعر تجربة ومعاناة، يرى الشعر مسؤولية لا ترفًا، ويؤمن بأن الكلمة الصادقة لا تُقال إلا من قلبٍ ذاق الألم. لذلك جاء شعره عميق المعنى، قوي التأثير، قريبًا من الناس، باقياً رغم تعاقب السنين.
+        </div>
+    </div>
+
+    <div class="searchable-section">
+        <span class="section-h">الرحيل</span>
+        <div class="content-text">
+            توفي الشاعر بندر بن سرور رحمه الله عام 1404هـ، تاركًا إرثًا شعريًا خالدًا ما زال حاضرًا في الذاكرة الشعبية، ومتداولًا بين محبي الشعر النبطي، لما يحمله من صدق التجربة وسمو المعنى.
+        </div>
+    </div>
+
+    <div class="nav-footer">
+        <a href="poems_intro.html" class="nav-btn">قصائد التعريف بالذات</a>
+    </div>
+</div>
+
+<script>
+    function siteSearch() {
+        let filter = document.getElementById('searchInput').value.toLowerCase();
+        let sections = document.querySelectorAll('.searchable-section');
+        
+        sections.forEach(section => {
+            let text = section.innerText.toLowerCase();
+            if (text.includes(filter)) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
