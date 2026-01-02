@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بندر بن سرور | يالله يا جال الأمور</title>
+    <title>بندر بن سرور | يالله يا جال الامور المهمه</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         @font-face {
@@ -12,195 +12,268 @@
         }
 
         :root {
-            --gold: #c5a059;
-            --bg-black: #080808;
-            --text-color: #d1d1d1;
+            --primary-gold: #c5a059;
+            --muted-gold: #a38b5d;
+            --dark-bg: #0a0a0a; 
+            --card-bg: rgba(22, 22, 22, 0.6);
         }
 
         body {
-            background-color: var(--bg-black);
-            color: var(--text-color);
+            background-color: var(--dark-bg);
+            color: #d1d1d1;
             font-family: 'Amiri', serif;
             margin: 0; padding: 0;
-            line-height: 1.6;
         }
 
         header {
             width: 100%;
-            padding: 50px 0 30px;
+            padding: 60px 0 40px;
             text-align: center;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         }
 
         .header-title {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 2.8em; 
-            color: var(--gold);
+            font-size: 3.2em; 
+            color: var(--primary-gold);
             margin: 0;
         }
 
         .header-sub {
             font-family: 'GE_SS_Two_Custom', sans-serif;
-            color: #666;
-            font-size: 1em;
-            margin-top: 8px;
+            color: var(--muted-gold);
+            font-size: 1.1em;
+            margin-top: 10px;
         }
 
-        .poem-container {
+        .container {
             width: 90%;
-            max-width: 800px;
-            margin: 40px auto 100px;
+            max-width: 850px;
+            margin: 50px auto;
         }
 
-        .verse-row {
+        /* اللوحة الموحدة */
+        .poem-board {
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 25px;
+            padding: 50px 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* تنسيق البيت الواحد */
+        .verse-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        .verse-content {
             display: flex;
             justify-content: space-between;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            transition: 0.4s ease;
-        }
-
-        .verse-row:hover {
-            text-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
-            background: rgba(197, 160, 89, 0.02);
+            width: 100%;
+            padding: 10px 0;
+            transition: 0.4s;
         }
 
         .shatr {
-            width: 48%;
-            font-size: 1.25em; /* تصغير الخط */
-            color: var(--text-color);
+            width: 46%;
+            font-size: 1.4em;
+            line-height: 1.6;
             text-align: center;
+            transition: 0.4s;
         }
 
-        .verse-row:hover .shatr {
+        .verse-content:hover .shatr {
             color: #fff;
+            text-shadow: 0 0 15px rgba(197, 160, 89, 0.6);
+        }
+
+        /* الفاصل البني بين كل بيت وبيت */
+        .verse-divider {
+            height: 35px;
+            width: 100%;
+            background: url('https://img.icons8.com/ios/50/a38b5d/arabesque.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.15;
+            margin: 5px 0;
         }
 
         .nav-footer {
+            margin: 60px auto 100px;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            padding: 40px 0 80px;
+            gap: 20px;
         }
 
         .btn {
             font-family: 'GE_SS_Two_Custom', sans-serif;
             text-decoration: none;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 10px 35px;
-            border-radius: 50px; /* إطار دائري */
-            font-size: 0.9em;
-            transition: 0.3s ease;
+            color: var(--primary-gold);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 12px 40px;
+            border-radius: 50px; 
+            transition: 0.4s;
         }
 
         .btn:hover {
-            background: var(--gold);
-            color: var(--bg-black);
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            box-shadow: 0 5px 20px rgba(197, 160, 89, 0.4);
         }
 
         @media (max-width: 600px) {
-            .header-title { font-size: 2em; }
-            .verse-row { flex-direction: column; text-align: center; gap: 8px; padding: 20px 0; }
-            .shatr { width: 100%; font-size: 1.15em; }
+            .header-title { font-size: 2.2em; }
+            .verse-content { flex-direction: column; gap: 5px; }
+            .shatr { width: 100%; font-size: 1.25em; }
+            .poem-board { padding: 30px 15px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-title">يالله يا جال الأمور المهمه</div>
+    <div class="header-title">يالله يا جال الامور المهمه</div>
     <div class="header-sub">بندر بن سرور</div>
 </header>
 
-<div class="poem-container">
-    
-    <div class="verse-row">
-        <span class="shatr">يالله يا جال الأمور المهمّه</span>
-        <span class="shatr">تجلى وهق قلب برى حال راعيه</span>
-    </div>
+<div class="container">
+    <div class="poem-board">
+        
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">يالله يا جال الامور المهمّه</span>
+                <span class="shatr">تجلى وهق قلب برى حال راعيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">البر دجته و البحر رحت يمّه</span>
-        <span class="shatr">ادرج سبب حظٍ على الله مساعيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">البر دجته و البحر رحت يمّه</span>
+                <span class="shatr">ادرج سبب حظٍ على الله مساعيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">يوم ان ولد اللاش رزقه على امّه</span>
-        <span class="shatr">رزقي على اللي ميّت القشع يحييه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">يوم ان ولد اللاش رزقه على امّه</span>
+                <span class="shatr">رزقي على اللي ميّت القشع يحييه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">ماني وانا بندر ببياع دمّه</span>
-        <span class="shatr">يقطعك يا بيّاع دمّه و مهفيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">ماني وانا بندر ببياع دمّه</span>
+                <span class="shatr">يقطعك يا بيّاع دمّه و مهفيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">اللي يبيّع لابسات الأزمّه</span>
-        <span class="shatr">ثورٍ يبي بيض العماهيج تغنيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">اللي يبيّع لابسات الأزمّه</span>
+                <span class="shatr">ثورٍ يبي بيض العماهيج تغنيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">يزعل ليا جت ليلة الدول يمّه</span>
-        <span class="shatr">يرضى بسوق المال بأخيه و أبيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">يزعل ليا جت ليلة الدول يمّه</span>
+                <span class="shatr">يرضى بسوق المال بأخيه و أبيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">خطو البخيل اللي يكبّر معمّه</span>
-        <span class="shatr">يقرا الكتاب و واجب الله مخليه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">خطو البخيل اللي يكبّر معمّه</span>
+                <span class="shatr">يقرا الكتاب و واجب الله مخليه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">اما هرج له في رفيقه بنمّه</span>
-        <span class="shatr">ولا عطا و أمه تضيّع هقاويه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">اما هرج له في رفيقه بنمّه</span>
+                <span class="shatr">ولا عطا و أمه تضيّع هقاويه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">يا مل قلبٍ كل ما مات همّه</span>
-        <span class="shatr">دارت دواليب الدهر لين تحييه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">يا مل قلبٍ كل ما مات همّه</span>
+                <span class="shatr">دارت دواليب الدهر لين تحييه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">فرّاق شمل الناس عيّا يلمّه</span>
-        <span class="shatr">وقتٍ يشيب الراس من شايةٍ فيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">فرّاق شمل الناس عيّا يلمّه</span>
+                <span class="shatr">وقتٍ يشيب الراس من شايةٍ فيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">أحدٍ ينام و حط راسه بكمّه</span>
-        <span class="shatr">وأحدٍ تخم النوم عينه وتخطيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">أحدٍ ينام و حط راسه بكمّه</span>
+                <span class="shatr">وأحدٍ تخم النوم عينه وتخطيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">وأحدٍ يحاول بالردى بنت عمّه</span>
-        <span class="shatr">وأحدٍ يحاول ستر عذرا عوانيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">وأحدٍ يحاول بالردى بنت عمّه</span>
+                <span class="shatr">وأحدٍ يحاول ستر عذرا عوانيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">تخالف الأنظار شرقٍ ويمّه</span>
-        <span class="shatr">كلٍ هدف رايه من الناس مرضيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">تخالف الأنظار شرقٍ ويمّه</span>
+                <span class="shatr">كلٍ هدف رايه من الناس مرضيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">انشدك ياللي كل شي تتمّه</span>
-        <span class="shatr">تقرا الكتاب وكل فرضٍ تصليه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">انشدك ياللي كل شي تتمّه</span>
+                <span class="shatr">تقرا الكتاب وكل فرضٍ تصليه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">ويش القليب اللي عميق مجمّه</span>
-        <span class="shatr">ما سرّ غرسه ماه عطشى سوانيه</span>
-    </div>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">ويش القليب اللي عميق مجمّه</span>
+                <span class="shatr">ما سرّ غرسه ماه عطشى سوانيه</span>
+            </div>
+            <div class="verse-divider"></div>
+        </div>
 
-    <div class="verse-row">
-        <span class="shatr">سم السبب يا عارفٍ عنه سمّه</span>
-        <span class="shatr">سم السبب يا عارفه قبل اسميه</span>
+        <div class="verse-item">
+            <div class="verse-content">
+                <span class="shatr">سم السبب يا عارفٍ عنه سمّه</span>
+                <span class="shatr">سم السبب يا عارفه قبل اسميه</span>
+            </div>
+            </div>
+
     </div>
 
     <div class="nav-footer">
         <a href="poems_intro.html" class="btn">العودة</a>
         <a href="jamous_poems.html" class="btn">القصيدة التالية</a>
     </div>
-
 </div>
 
 </body>
