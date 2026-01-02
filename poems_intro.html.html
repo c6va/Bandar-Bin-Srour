@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بندر بن سرور | ماني وانا بندر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* تعريف خطك الخاص */
+        @font-face {
+            font-family: 'GE_SS_Two_Custom';
+            src: url('GE_SS_Two_Medium 2.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --primary-gold: #c5a059;
+            --muted-gold: #a38b5d;
+            --dark-bg: #0a0a0a; 
+            --card-bg: rgba(22, 22, 22, 0.7);
+            --text-main: #d1d1d1;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Amiri', serif;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 70px 0 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, #161616, var(--dark-bg));
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .header-title {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3.2em; 
+            color: var(--primary-gold);
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .header-sub {
+            font-family: 'GE_SS_Two_Custom', sans-serif;
+            color: var(--muted-gold);
+            font-size: 1.1em;
+            margin-top: 12px;
+            opacity: 0.8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+        }
+
+        .poem-body {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* كرت الأبيات المحترف */
+        .verse-group {
+            background: var(--card-bg);
+            border: 1px solid rgba(163, 139, 93, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            transition: var(--transition);
+            position: relative;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .verse-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .verse-group:hover {
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.15);
+            transform: translateY(-5px) scale(1.01);
+            background: rgba(30, 30, 30, 0.8);
+        }
+
+        .verse {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .shatr {
+            width: 47%;
+            font-size: 1.45em;
+            line-height: 1.8;
+            transition: 0.4s;
+            color: #ccc;
+        }
+
+        .verse-group:hover .shatr {
+            color: #fff;
+            text-shadow: 0 0 1px rgba(255,255,255,0.3);
+        }
+
+        /* الفاصلة البنية الزخرفية */
+        .divider {
+            height: 50px;
+            background: url('https://img.icons8.com/ios/50/a38b5d/arabesque.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.25;
+            margin: 15px 0;
+            transition: 0.5s;
+        }
+
+        .verse-group:hover .divider {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+
+        /* أزرار التنقل */
+        .nav-footer {
+            margin: 80px auto 120px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            width: 90%;
+        }
+
+        .btn {
+            font-family: 'GE_SS_Two_Custom', sans-serif;
+            text-decoration: none;
+            color: var(--primary-gold);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 0.95em;
+            transition: var(--transition);
+            background: rgba(197, 160, 89, 0.02);
+        }
+
+        .btn:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            box-shadow: 0 5px 25px rgba(197, 160, 89, 0.4);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .header-title { font-size: 2.4em; }
+            .verse { flex-direction: column; gap: 15px; text-align: center; }
+            .shatr { width: 100%; font-size: 1.25em; }
+            .verse-group { padding: 30px 20px; }
+            .divider { height: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-title">ماني وانا بندر</div>
+    <div class="header-sub">-رحمه الله-</div>
+</header>
+
+<div class="container">
+    <div class="poem-body">
+        
+        <div class="verse-group">
+            <div class="verse">
+                <span class="shatr">ماني وانا بندر بهيتٍ ولد هيت</span>
+                <span class="shatr">هيتٍ يجامل خمةٍ يكرهونه</span>
+            </div>
+            <div class="divider"></div>
+            <div class="verse">
+                <span class="shatr">من كثر ما جربت واقبلت واقفيت</span>
+                <span class="shatr">قولة هلا لمن لا يودّك مهونه</span>
+            </div>
+        </div>
+
+        <div class="verse-group">
+            <div class="verse">
+                <span class="shatr">ماني وانا بندر ببيّاع دمّه</span>
+                <span class="shatr">يقطعك يا بياع دمه ومهفيه</span>
+            </div>
+            <div class="divider"></div>
+            <div class="verse">
+                <span class="shatr">اللي يبيّع لابسات الأزمّه</span>
+                <span class="shatr">ثورٍ يبي بيض العماهيج تغنيه</span>
+            </div>
+        </div>
+
+        <div class="verse-group">
+            <div class="verse">
+                <span class="shatr">ماني وانا بندر براعٍ ولد راع</span>
+                <span class="shatr">انا الحصان اللي طوالٍ حباله</span>
+            </div>
+            <div class="divider"></div>
+            <div class="verse">
+                <span class="shatr">ابن سلايل خير من شالت القاع</span>
+                <span class="shatr">المصطفى الهادي وديع الرساله</span>
+            </div>
+        </div>
+
+        <div class="verse-group">
+            <div class="verse">
+                <span class="shatr">ماني وانا بندر بهيسٍ ولد هيس</span>
+                <span class="shatr">هيسٍ يدنّع عند حرمة قصيره</span>
+            </div>
+            <div class="divider"></div>
+            <div class="verse">
+                <span class="shatr">اليا بغيت اجلس ترى لي مجاليس</span>
+                <span class="shatr">واليا بغيت انهج دروبي عسيره</span>
+            </div>
+        </div>
+
+        <div class="verse-group">
+            <div class="verse">
+                <span class="shatr">ماني وانا بندر على درب الأنجاس</span>
+                <span class="shatr">اللي قريبٍ تفلها من لحاها</span>
+            </div>
+            <div class="divider"></div>
+            <div class="verse">
+                <span class="shatr">انا بدرب الصيرمي عدم الأجناس</span>
+                <span class="shatr">زيزوم روق ليا تنصّت عداها</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-footer">
+        <a href="index.html" class="btn">العودة</a>
+        <a href="jamous_poems.html" class="btn">القصيدة التالية</a>
+    </div>
+</div>
+
+<script>
+    // أنيميشن الظهور المتسلسل
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // إضافة تأخير بسيط لكل كرت ليظهروا وراء بعض
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); 
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.verse-group').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
